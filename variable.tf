@@ -5,5 +5,5 @@ variable "Region" {
   default = "us-east-1"
 }
 variable "Instance_type" {
- dedefault = "t2.micro"
+ default = "t2.micro"
 }
