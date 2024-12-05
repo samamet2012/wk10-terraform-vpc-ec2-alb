@@ -1,13 +1,13 @@
 ## Creating 
 resource "aws_instance" "server1" {
   ami                    = "ami-02d7fd1c2af6eead0"
-  instance_type          = "t2.micro"
+  instance_type          = var.Instance_type
   vpc_security_group_ids = [aws_security_group.sg1.id]
-  availability_zone      = "us-east-1a"
+  availability_zone      = "${var.Region}a"
   subnet_id              = aws_subnet.private1.id
   user_data              = file("code.sh")
   tags = {
-    Name = "webserver-1"
+    Name = var.Environment
   }
 
 }
